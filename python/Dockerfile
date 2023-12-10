@@ -5,8 +5,8 @@ FROM python:3.9 AS builder
 WORKDIR /app
 ARG PIP_VERSION=23.3.1
 COPY requirements.txt .
-RUN pip install --upgrade pip==${PIP_VERSION} && \
-    pip install --no-cache-dir -r requirements.txt
+RUN pip3 install --upgrade pip==${PIP_VERSION}
+RUN pip3 install -r requirements.txt
 
 FROM python:3.9-slim
 
